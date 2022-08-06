@@ -1,0 +1,55 @@
+A  maioria dos sistemas está sendo desenvolvida utilizando APIs e a arquiteturas de microserviços.
+Com as APIs. o back-end é totalmente isolado do front-end e, com os microsserviços, os projetos são muitos menores, não passando de algumas dezenas ou centenas de arquivos. Além disso, evita-se a duplicação de código já que cada serviço implementa uma funcionalidade especifica e pode ser reutilizado por diversas aplicações.
+
+Isso se deve ao grau de maturidade da linguagem e da sua máquina virtual. Existem diversas formas de desenvolver microsserviços em Java, como utilizar bibliotecas nativas ou o framework Spring(Alguns projetos spring Boot, Spring Data e o Spring Cloud, por exemplo)
+
+Uma maneira mais simples de testar as aplicações é criar um cluster local utilizando o Kubernetes, já que o cluster pode ficar executando em background e apenas o microsserviço alterado necessita ser atualizado. Além de facilitar os testes, utilizar o Kubernetes no ambiente de desenvolvimento aumenta a confiabilidade da aplicação, já que o ambiente do programador é muito mais próximo dos ambientes de homologação e produção.
+
+É possível usar outros framewoks com o Spring e até mesmo as bibliotecas do Enterprise Java Beans(EJB).
+
+O spring data de 2002, é um projeto robusto e estável
+O Spring está na versão 5.0, lançado em 2017
+
+Spring Boot
+Uma forma de criar aplicações baseadas no framework Spring de forma simples e rápida. Nelas, já existe um contêiner Web, que pode ser o Tomcat ou o Jetty, e a aplicação é executada com apenas um run, diferentemente de quando ẽ necessãrio primeiro instalar e configurar um contêiner, gerar um arquivo WAR(Web Application Resource) e por fim implantá-lo no contêiner.
+
+O Spring Boot também facilita a configuração das aplicações através de arquivos de arquivos properties iu diretamente no código, não sendo necessário o uso de arquivos XML.
+
+Há também uma grande bibliotecas especialmente criadas para ele, como para acesso a dados em bancu de dados relacionais e NoSQL, para geração de métricas sobre a aplicação, acesso a serviços e muito mais.
+
+https://start.spring.io/
+
+Spring Data
+É um projeto do Spring para facilitar a criação da camada de persistência de dados. Esses projeto tem abstrações para diferentes modelos de dadods, como banco de dados relacionais e não relacionais como o MongoDB e o Redis.
+
+Relacionado a banco de dados relacionais, o Spring Data possibilita o acesso aos dados utilizando interfaces e definindo apenas o nome de um método. O framework, com isso, implementa todo o acesso ao banco de dados automaticamente.
+
+Por exemplo, a classe na listagem a seguir define três métodos que serão traduzidas para consultas em um banco de dados relacional:
+
+List<Pessoa> findByName(String name);
+List<Pessoa> findByAge(int age);
+List<Pessoa> findByCpf(String cpf);
+
+Nesse exemplo, para uma classe Pessoa, o Spring Data automaticamente gera um método que fará a busca, no primeiro caso pelo nome, nosegundo, pela idade e no terceiro, pelo CPF.
+
+Spring Cloud
+É um projeto que disponibiliza diversas funcionalidades para a construção de sistemas distribuídos, como gerenciamento de configuração, serviços de descoberta, proxys, eleição de líderes etc.
+
+Kubernetes
+O Kubernetes, ou K8s, é uma ferramenta para facilitar a execução inicialmente desenvolvida por engenheiros do Google, mas hoje aberta para ser utilizada em diversas plataformas. Nela, é possível definir diversas opções para a implatanção, execução e disponibilização dos contêineres de forma fácil e, em muitos casos, automomática.
+
+Atualmente, o k8s é uma das principais ferramentas de DevOps, pois é utilizada normalmente em ambientes de produção e homologação das aplicações.
+
+Porém,também é possível a criação de um cluster local em uma máquina de desenvolvimento, o que facilita bastante os testes locais de uma aplicação e também aumenta a confiabilidade de um novo desenvolvimento, já que o ambiente de programação é muito mais próximo do ambiente de produção.
+
+Estrutura básica do kubernetes dessa ferrementa é criar difinições para os contêineres que serão executados, com algumas configurações básicas como número de CPUs e quantidade de memória necessária para executar esse contêiner.
+
+A partir deles, é possível criar máquinas vurtuais (chamadas Pods) que os executam. Assim, o k8s disponibiliza diversas funcionalidades para facilitar e otimizar a execução dos Pods, como aproveitar melhor o hardware da máquina alocando e desalocando recursos automaticamente, monitorar aplicações, escalar rapidamente e automaticamente serviços de acordo com o uso de hardware e garantir a autorecuperação das aplicações de forma rápida e simples.
+
+https://github.com/ezambomsantana/java-back-end-livro
+
+
+
+
+
+
